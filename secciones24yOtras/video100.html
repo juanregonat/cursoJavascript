@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Aprendiendo JQuery - Video 100</title>
+        <script type="text/javascript" src="JQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="JQuery/eventos.js"></script>
+
+        <style>
+            .zebra{
+                border:3px dashed black;
+            }
+            .grande{
+                font-size: 30px;
+            }
+            .margen_sup{
+                display: block;
+                margin-top: 45px;
+            }
+            .resaltado{
+                border-bottom: 2px solid green;
+            }
+            .caja{
+                margin-left: 20px;
+                padding-left: 10px;
+                width: 200px;
+                height: 200px;
+                background-color: "yelow";
+                
+                border: 2px solid red;
+            }
+            #form{
+                margin:20px;
+                background-color: yelow;
+            }
+            #datos{
+                border: 4px dashed black;
+                padding:10px;
+                width:250px;
+                height: 50px;
+                margin-top: 10px;
+                display: none;
+            }
+            #sigueme{
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                display: block;
+                background: rgb(58, 180, 28);
+                opacity: 0.7;
+                border-radius: 999px;
+                border: 2px solid black;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <h1>Aprendiendo JQuery - 100</h1>
+
+        <div id="sigueme">
+
+        </div>
+
+        
+        <div id="form">
+            <form>
+                Nombre: <input id="nombre" type="text">
+            </form>
+
+
+            <div id="datos">
+
+            </div>
+
+        </div>
+
+
+        <div id="caja" class="caja">
+            <p>Soy una caja</p>
+            <span class="resaltado">soy un span</span>
+        </div>
+
+
+
+
+
+    </body>
+</html>
