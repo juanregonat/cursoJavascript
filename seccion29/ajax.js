@@ -3,7 +3,6 @@ $(document).ready(function(){
     //LOAD:
     //$("#datos").load("https://reqres.in");
 
-
 ///////////////////////////////////////////////
     //GET
     $.get("https://reqres.in/api/users", {page:2}, function(response){
