@@ -98,10 +98,30 @@ $("#formulario").submit(function(e){
         web:$('input[name="web"]').val()
     };
         
-    $.post($(this).attr("action"), usuario, function(response){
-        console.log(response);
-    }).done(function () {   //cuando se añade el usuario, con "done" se agrega un callback con un msg
-        alert("usuario añadido exitosamente");
+    // $.post($(this).attr("action"), usuario, function(response){
+    //     console.log(response);
+    // }).done(function () {   //cuando se añade el usuario, con "done" se agrega un callback con un msg
+    //     alert("usuario añadido exitosamente");
+    // });
+
+
+    //$.ajax es el método mas cómodo. Se le pasan atributos por JSON:
+    $.ajax({ 
+        type:'POST',
+        //dataType:'json',
+        //contentType:'application/json',
+        url: $(this).attr("action"),
+        data: usuario,
+        beforeSend: function () {
+            console.log("Enviando usuario");
+        },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function () {
+            console.log("error");
+        },
+        timeout: 2000
     });
 
     return false; //evita que nos envie a otra página
