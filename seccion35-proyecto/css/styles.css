@@ -22,7 +22,7 @@ body{
     margin:0px auto;
     margin-top: 30px;
     background: white;
-    padding:20px;
+    padding:25px;
     box-shadow: 0px 0px 2px grey
 }
 
@@ -72,9 +72,98 @@ body{
     padding-right: 30px;
 }
 
+#posts{
+    width: 60%;
+    font-family: "helvetica","arial";
+    float: left;
 
+}
 
+.post{
+    margin:7px;
+}
 
+.post h2{
+    font-size: 30px;
+    color:#333;
+}
+
+.post .date{
+    display: block;
+    color:gray;
+    margin-top:5px;
+}
+
+.post p{
+    margin-top:10px;
+    margin-bottom: 20px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.button-more{
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    background: #235E30;
+    color:white;
+    text-decoration: none;
+    margin-top: 10px;
+    width: 70px;
+    margin-bottom:20px;
+}
+
+#sidebar{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 31%;
+    float:right;
+
+}
+
+#sidebar h4{
+    margin-top:50px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 10px;
+    color:#333;
+    background: url("../img/lines.png") repeat-x ;
+
+}
+
+#sidebar h4 span{
+    background: white;
+    padding:5px;
+}
+
+#sidebar img{
+    width: 100%;
+
+}
+
+#sidebar p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+form input[type="text"], 
+form input[type="password"],
+form input[type="email"]{
+    padding: 5px;
+    border-radius: 2px;    
+    border:1px solid #ccc;
+    width: 80%;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 2px grey;
+    margin-top: 5px;
+}
+
+form input[type="submit"]{
+    background: #ccc;
+    padding: 10px;
+    border: 1px solid #333;
+    cursor:pointer;
+}
 
 
 
