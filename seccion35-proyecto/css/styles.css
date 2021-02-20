@@ -184,13 +184,14 @@ footer{
 #to-green, 
 #to-red, 
 #to-blue{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: 1px solid white;
     display: block;
     margin: 0px auto;
     margin-top: 5px;
-    margin-bottom: 5px;    
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 #to-green{
@@ -201,4 +202,11 @@ footer{
 }
 #to-blue{
     background: #1f87c4
+}
+
+.subir{
+    color: white;
+    text-decoration: none;
+    display: block;
+    float: right;
 }
