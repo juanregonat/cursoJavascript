@@ -1,6 +1,8 @@
 
 // Initialize the slider
 $(document).ready(function(){
+
+    if(window.location.href.indexOf('index') > -1){ //solo carga en la index.html
     $('.bxslider').bxSlider({
         mode: 'fade',
         captions: true,
@@ -57,7 +59,7 @@ $(document).ready(function(){
         $("#posts").append(post);
     });
 
-
+    }
 
     //Selector de tema: tomo el obj con id theme, que era la etiqueta de link css
     //y le cambio el atributo href
@@ -95,14 +97,28 @@ $(document).ready(function(){
 
     var form_name = localStorage.getItem("form_name");
 
-    $('#about p').html("Bienvenido, " + form_name);
+    if(form_name != null && form_name != 'undefined'){
+        var about_parrafo = $('#about p');
+
+        about_parrafo.html("<strong>Bienvenido, " + form_name  + "</strong>");
+        about_parrafo.append(" <a href='#' id='logout'>Cerrar sesión</a> ");
+
+        $('#login').hide();
+    }
+
+    $('#logout').click(function(){
+        localStorage.clear(); //vacia el localstorage
+        location.reload(); //recarga la página
+    });
 
 
 
+    // ACORDEON DE about_parrafo.HTML
+    if(window.location.href.indexOf('about') > -1){ //solo carga en la about.html
+        $('#acordeon').accordion();
 
 
-
-
+    }
 
 
 
