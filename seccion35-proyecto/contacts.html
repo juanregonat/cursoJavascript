@@ -12,12 +12,9 @@
         <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         
-
-        <!-- JQUERY UI -->
-        <link rel="stylesheet" type="text/css" href="../JQuery/jquery-ui-1.12.1/jquery-ui.min.css">
-        <link rel="stylesheet" type="text/css" href="../JQuery/jquery-ui-1.12.1/jquery-ui.structure.min.css">
-        <link rel="stylesheet" type="text/css" href="../JQuery/jquery-ui-1.12.1/jquery-ui.theme.min.css">
-        <script type="text/javascript" src="../JQuery/jquery-ui-1.12.1/jquery-ui.min.js"></script>  
+        
+        <!-- FORMULARIO - VALIDACION -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 
     </head>
     <body>
@@ -47,42 +44,40 @@
                     </ul>
                 </nav>
             </header>
-                
+                     
 
             <!--CONTENIDO-->
             <section id="content">
+
                 <div id="box">
+                    <!--FORM CONTACTO-->
+                    <h2>CONTACTO</h2>
+                    <form>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name">
 
-                    <h2>Ejemplo Acordeon</h2>
-                    <!-- ACORDEON -->
-                    <div id="acordeon">
-                        <h3>¿Quienes somos?</h3>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt auctor nisi ac viverra. Pellentesque habitant morbi tristique senectus 
-                            </p>
-                        </div>
+                        <label for="surname">Apellidos</label>
+                        <input type="text" name="surname">
 
-                        <h3>Nuestros servicios</h3>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt auctor nisi ac viverra. Pellentesque habitant morbi tristique senectus 
-                            </p>
-                        </div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email">
 
-                        <h3>Nuestros clientes</h3>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt auctor nisi ac viverra. Pellentesque habitant morbi tristique senectus 
-                            </p>
-                        </div>
-                    </div>
+                        <label for="sex">Sexo</label>
+                        <select name="sex">
+                            <option value="men">Hombre</option>
+                            <option value="woman">Mujer</option>
+                        </select>
 
+                        <label for="date">Fecha de nacimiento</label>
+                        <input type="text" name="date">
 
+                        <label for="years">Edad</label>
+                        <input type="number" name="years">
 
+                        <input type="submit" value="Enviar">
+                    </form>
 
-
-
+                    
 
                 </div>
                 <aside id="sidebar">
@@ -117,6 +112,10 @@
                 </div>
 
                 </aside>
+                 
+
+
+                
             </section>
             
             <div id="clearfix"></div>

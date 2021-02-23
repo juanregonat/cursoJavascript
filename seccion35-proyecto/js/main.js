@@ -116,11 +116,18 @@ $(document).ready(function(){
     // ACORDEON DE about_parrafo.HTML
     if(window.location.href.indexOf('about') > -1){ //solo carga en la about.html
         $('#acordeon').accordion();
-
-
     }
 
 
+    // RELOJ
+    if(window.location.href.indexOf('reloj') > -1){ //solo carga en la about.html
+        setInterval(function(){
+            var reloj = moment().format("hh:mm:ss");
+            $('#reloj').html(reloj);
+        }, 1000);
+        
+    }
+    
 
 
 
