@@ -129,7 +129,21 @@ $(document).ready(function(){
     }
     
 
-
+    //VALIDACION DEL FORMULARIO DE CONTACTO:
+    if(window.location.href.indexOf('contacts') > -1){ 
+    //todos los campos que sean tipo "date", ponerle un datepicker
+        $("form input[name='date']").datepicker({
+            dateFormat: 'dd-mm-yy'
+        });
+        
+        // //llamo al validador de formularios:
+        $.validate({
+            lang:'es',
+            errorMessagePosition:'top',
+            scrollToTopOnError:false
+        });
+        
+    }
 
 
 
