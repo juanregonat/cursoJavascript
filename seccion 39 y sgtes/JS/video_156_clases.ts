@@ -20,6 +20,6 @@ class Camiseta{
 }
 
 var camiseta = new Camiseta();
-camiseta.setColor("rojo");
+camiseta.setColor("azul");
 
 console.log(camiseta.getColor());
