@@ -1,7 +1,13 @@
+"use strict";
 var Camiseta = /** @class */ (function () {
-    function Camiseta() {
-    }
     //metodos
+    function Camiseta(modelo, color, marca, talla, precio) {
+        this.modelo = modelo;
+        this.color = color;
+        this.marca = marca;
+        this.talla = talla;
+        this.precio = precio;
+    }
     Camiseta.prototype.setColor = function (color) {
         this.color = color;
     };
@@ -10,6 +16,7 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-var camiseta = new Camiseta();
-camiseta.setColor("azul");
+var camiseta = new Camiseta("manga larga", "Rojo", "Nike", "L", 14);
+//camiseta.setColor("azul");
 console.log(camiseta.getColor());
+console.log(camiseta);
