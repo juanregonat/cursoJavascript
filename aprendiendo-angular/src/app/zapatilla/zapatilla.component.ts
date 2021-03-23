@@ -23,3 +23,5 @@ export class ZapatillasComponent{
 
 // PARA COMENZAR NG SERVE
 
+// PARA AGREGAR NUEVOS COMPONENTES DESDE LA CONSOLA: ng generate component cursos
+

@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatillasComponent } from './zapatilla/zapatilla.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 // este decorador nos configura el modulo
 @NgModule({
   declarations: [
     AppComponent,
     VideojuegoComponent,
-    ZapatillasComponent
+    ZapatillasComponent,
+    CursosComponent
   ],
   imports: [
     BrowserModule,
