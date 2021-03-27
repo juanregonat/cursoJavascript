@@ -1,5 +1,8 @@
 <h2>{{titulo}}</h2>
 
 <ul>
-    <li *ngFor="let deportiva of zapatillas">{{deportiva.color}} - <strong>{{deportiva.precio}}</strong></li>
+    <li *ngFor="let deportiva of zapatillas">
+        {{deportiva.nombre}} -
+        {{deportiva.color}} - 
+         <strong>{{deportiva.precio}}</strong></li>
 </ul>
