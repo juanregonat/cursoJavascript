@@ -1,12 +1,31 @@
-import { Component, ComponentRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {Zapatilla} from '../models/zapatilla'
+
 
 @Component({
     selector: 'app-zapatillas',
     templateUrl: 'zapatilla.component.html'
 })
 
-export class ZapatillasComponent{
+export class ZapatillasComponent implements OnInit{
     public titulo: string = 'Componente de zapatillas';
+    public zapatillas:Array<Zapatilla>;
+
+    constructor(){
+        this.zapatillas = [
+            new Zapatilla('Reebook Classic', 'Reebook', 'Blanca', 80, true),
+            new Zapatilla('Reebook Classic', 'Reebook', 'Azul', 80, true),
+            new Zapatilla('Reebook Classic', 'Reebook', 'Rojo', 80, true),
+            new Zapatilla('Reebook Classic', 'Reebook', 'Verde', 80, false)
+        ];
+    }
+
+    ngOnInit(){
+        console.log(this.zapatillas);
+    }
+
+
+
 }
 
 // Para crear un cmponente:
