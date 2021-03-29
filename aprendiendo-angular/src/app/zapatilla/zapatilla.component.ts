@@ -10,11 +10,13 @@ import {Zapatilla} from '../models/zapatilla'
 export class ZapatillasComponent implements OnInit{
     public titulo: string = 'Componente de zapatillas';
     public zapatillas:Array<Zapatilla>;
+    public marcas: String[] = [];
 
     constructor(){
+        this.marcas = new Array();        
         this.zapatillas = [
             new Zapatilla('Reebook Classic', 'Reebook', 'Blanca', 100, true),
-            new Zapatilla('Reebook Botitas', 'Reebook', 'Azul', 120, true),
+            new Zapatilla('Reebook Botitas', 'Reebook Luxury', 'Azul', 120, true),
             new Zapatilla('Reebook Dama', 'Reebook', 'Rojo', 80, true),
             new Zapatilla('Reebook Girl', 'Reebook', 'Verde', 70, false)
         ];
@@ -22,10 +24,19 @@ export class ZapatillasComponent implements OnInit{
 
     ngOnInit(){
         console.log(this.zapatillas);
+        this.getMarcas();
     }
 
-
-
+    getMarcas(){
+        this.zapatillas.forEach((zapatilla, index)=>{
+            //busca con indexOf, sino lo encuentra lo agrega
+            if(this.marcas.indexOf(zapatilla.marca) <0 ){
+                this.marcas.push(zapatilla.marca);
+                // console.log(index);
+            }
+        });
+        console.log(this.marcas);    
+    };
 }
 
 // Para crear un cmponente:
