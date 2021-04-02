@@ -11,9 +11,13 @@ export class ZapatillasComponent implements OnInit{
     public titulo: string = 'Componente de zapatillas';
     public zapatillas:Array<Zapatilla>;
     public marcas: String[] = [];
+    public color: string ="";
+    public mi_marca: string = "";
+
 
     constructor(){
-        this.marcas = new Array();        
+        this.marcas = new Array();
+        this.color = 'yellow';
         this.zapatillas = [
             new Zapatilla('Reebook Classic', 'Reebook', 'Blanca', 100, true),
             new Zapatilla('Reebook Botitas', 'Reebook Luxury', 'Azul', 120, true),
@@ -32,11 +36,39 @@ export class ZapatillasComponent implements OnInit{
             //busca con indexOf, sino lo encuentra lo agrega
             if(this.marcas.indexOf(zapatilla.marca) <0 ){
                 this.marcas.push(zapatilla.marca);
-                // console.log(index);
+                console.log(index);
             }
         });
         console.log(this.marcas);    
     };
+
+    getMarca(){
+        console.log(this.mi_marca);
+        alert(this.mi_marca);
+    }
+
+    addMarca(){
+        this.marcas.push(this.mi_marca);        
+    }
+
+    borrarMarca(index){
+        //delete this.marcas[index];
+
+        //que indice quiero borrar? cuantos elmentos?
+        this.marcas.splice(index, 1);
+    }
+
+
+    onBlur(){
+        console.log("ha salido del input");
+    }
+
+    mostrarPalabra(){
+        console.log("presionado enter");
+    }
+
+
+
 }
 
 // Para crear un cmponente:
