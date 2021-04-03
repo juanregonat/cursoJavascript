@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
+import { routing, appRoutingProviders } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatillasComponent } from './zapatilla/zapatilla.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { HomeComponent } from './home/home.component';
 
 // este decorador nos configura el modulo
 @NgModule({
@@ -14,14 +18,18 @@ import { CursosComponent } from './cursos/cursos.component';
     AppComponent,
     VideojuegoComponent,
     ZapatillasComponent,
-    CursosComponent
+    CursosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    //AppRoutingModule,    
+    routing,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
