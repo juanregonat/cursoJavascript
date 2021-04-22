@@ -6,7 +6,6 @@ import { Zapatilla } from '../models/zapatilla';
 export class ZapatillaService {
     public zapatillas: Array<Zapatilla>;
 
-
     constructor(){
         this.zapatillas = [
             new Zapatilla('Reebook Classic', 'Reebook', 'Blanca', 100, true),
@@ -14,8 +13,6 @@ export class ZapatillaService {
             new Zapatilla('Reebook Dama', 'Reebook', 'Rojo', 80, true),
             new Zapatilla('Reebook Girl', 'Reebook', 'Verde', 70, false)
         ];
-
-
     }
 
     getZapatillas():Array<Zapatilla>{

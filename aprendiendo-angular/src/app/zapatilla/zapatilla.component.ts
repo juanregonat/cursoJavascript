@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Zapatilla} from '../models/zapatilla';
-import {ZapatillaService} from '../servicios/zapatilla.service';
+import { Zapatilla } from '../models/zapatilla';
+import { ZapatillaService } from '../servicios/zapatilla.service';
 
 @Component({
     selector: 'app-zapatillas',
     templateUrl: 'zapatilla.component.html',
-    providers: ['ZapatillaService'] 
+    providers: [ZapatillaService]
 })
 
 export class ZapatillasComponent implements OnInit{
@@ -19,9 +19,9 @@ export class ZapatillasComponent implements OnInit{
     constructor(
         private _zapatillaService : ZapatillaService
     ){
-        this.marcas = new Array();
+        //this.mi_marca = "Fila"; //así está en el video.
         this.color = 'yellow';
-
+        this.marcas = new Array();
     }
 
     ngOnInit(){
