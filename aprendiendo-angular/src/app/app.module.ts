@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
 
 import { CalculadoraPipe } from './pipes/calculadora.pipe';
+import { ContactoUsuarioComponent } from './contacto-usuario/contacto-usuario.component';
 
 // este decorador nos configura el modulo
 @NgModule({
@@ -24,7 +25,8 @@ import { CalculadoraPipe } from './pipes/calculadora.pipe';
     CursosComponent,
     HomeComponent,
     ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoUsuarioComponent
   ],
   imports: [
     BrowserModule,
