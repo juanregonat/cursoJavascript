@@ -15,4 +15,15 @@ export class PeticionesService{
         return this._http.get(this.url + 'api/users/'+userID);
     }
 
+
+    addUser(user): Observable<any>{
+        //a este servicio hay que enviarle un json-string, para eso usamos el metodo stringify
+        let params = JSON.stringify(user);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+                                //URL       +        BODY   +  HEADERS
+        return this._http.post(this.url+'api/users/', params, {headers: headers});
+    }
+
+
 }
