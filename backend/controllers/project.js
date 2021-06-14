@@ -1,6 +1,8 @@
 'use strict'
-var Project             = require('../models/project');
+var Project = require('../models/project');
 //var ProjectController   = require('../controllers/project');
+var fs = require('fs');
+var path = require('path');
 
 //controller va a tener todas las funciones que conforman el controlador y los
 //métodos que vamos a usar:
@@ -19,8 +21,8 @@ var controller = {
 
     saveProject: function(req,res){
         var project = new Project();
-        var params = req.body;
 
+        var params = req.body;
         project.name = params.name;
         project.description = params.description;
         project.category = params.category;
@@ -35,7 +37,8 @@ var controller = {
             if(!projectStored) return res.status(404).send({
                 message : 'No se ha podido guardar'
             });
-            return res.status(200).send({project:projectStored});
+            return res.status(200).send({
+                project:projectStored});
         });
     },
 
@@ -121,6 +124,65 @@ var controller = {
 
         });            
     },
+
+
+    uploadImage: function(req, res){
+        var projectId = req.params.id;
+        var fileName = "imagen no subida...";
+
+        if(req.files){
+            var filePath = req.files.image.path;
+            var fileSplit = filePath.split('\\');
+            var fileName = fileSplit[1];
+            var extSplit = fileName.split('\.');
+            var fileExt = extSplit[1];
+            
+            if (fileExt == 'png' || 
+            fileExt == 'jpg' || 
+            fileExt == 'jpeg' || 
+            fileExt == 'gif' ){
+
+                Project.findByIdAndUpdate(projectId, {image: fileName}, {new:true}, (err, projectUpdated)=>{
+                    if(err) return res.status(500).send({message: 'La imagen no se subió'});
+    
+                    if(!projectUpdated) return res.status(404).send({message: 'El proyecto no existe y la imagen no se ha cargado'});
+    
+                    return res.status(200).send({
+                        project: projectUpdated
+                    });
+                });
+                
+            } else {
+                fs.unlink(filePath, (err)=>{
+                    return res.status(200).send({message:'La extension no es aceptable'});
+                })
+
+            }
+
+        } else {
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+
+    },
+
+
+    getImageFile: function(req, res){
+		var file = req.params.image;
+		var path_file = './uploads/'+file;
+
+		fs.exists(path_file, (exists) => {
+			if(exists){
+				return res.sendFile(path.resolve(path_file));
+			}else{
+				return res.status(200).send({
+					message: "No existe la imagen..."
+				});
+			}
+		});
+	}
+
 
 
 };  
