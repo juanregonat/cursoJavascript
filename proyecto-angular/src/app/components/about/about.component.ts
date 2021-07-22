@@ -5,9 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit {  
+    public title: string;
+    public subtitle: string;
+    public web: string;
 
-  constructor() { }
+  constructor() {
+    this.title = 'Victor Robles';
+    this.subtitle = 'Desarrollo web y formador';
+    this.web = 'victorrobles.es';
+    
+   }
 
   ngOnInit(): void {
   }

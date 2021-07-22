@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http"; //permite hacer peticiones ajax
+import { FormsModule } from "@angular/forms"; //permite usar el two way data binding
 import { BrowserModule } from '@angular/platform-browser';
 //importamos rutas:
 import { routing, AppRoutingProviders } from './app.routing'; 
